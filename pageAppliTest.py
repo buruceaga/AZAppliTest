@@ -16,7 +16,7 @@ class RequestHandler(BaseHTTPRequestHandler):
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Date and Time</title>
+            <title>Date and Time Hello</title>
         </head>
         <body>
             <h1>Current Date and Time:</h1>
