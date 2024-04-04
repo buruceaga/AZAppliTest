@@ -1,14 +1,27 @@
-from flask import Flask, render_template
 from datetime import datetime
 
-app = Flask(__name__)
+def generate_html(current_time):
+    html_content = f"""
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Date and Time</title>
+    </head>
+    <body>
+        <h1>Current Date and Time:</h1>
+        <p>{current_time}</p>
+    </body>
+    </html>
+    """
+    return html_content
 
-@app.route('/')
-def index():
+def main():
     now = datetime.now()
     current_time = now.strftime("%Y-%m-%d %H:%M:%S")
-    return render_template('index.html', current_time=current_time)
+    html_content = generate_html(current_time)
+    print(html_content)
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
-    app.run(debug=True)
+if __name__ == "__main__":
+    main()
